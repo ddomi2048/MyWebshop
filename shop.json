@@ -10,27 +10,37 @@
       },
       {
         "id": 2,
-        "make": "Porsche",
-        "model": "930 Turbo",
+        "make": "Ferrari",
+        "model": "Testarossa",
         "price": 1,
-        "quantity": 1
+        "quantity": 1,
+        "imageUrl": ""
       },
       {
         "id": 3,
-        "make": "Porsche",
-        "model": "930 Turbo",
+        "make": "Lamborghini",
+        "model": "Countach",
         "price": 1,
-        "quantity": 1
+        "quantity": 1,
+        "imageUrl": ""
       },
       {
         "id": 4,
-        "make": "Porsche",
-        "model": "930 Turbo",
+        "make": "DeLorean",
+        "model": "DMC-12",
         "price": 1,
-        "quantity": 1
+        "quantity": 1,
+        "imageUrl": ""
       }
     ],
     "cart" : [
-        
+      {
+        "id": 1,
+        "make": "Porsche",
+        "model": "930 Turbo",
+        "price": 1,
+        "quantity": 1,
+        "imageUrl": ""
+      }
     ]
   }

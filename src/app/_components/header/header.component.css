@@ -4,9 +4,10 @@ a {
     color: #000000 !important;
 }
 
-a.nav-link:hover {
+a:hover {
     color: white !important;
     cursor: pointer !important;
+    transition: ease-in-out 0.15s;
 }
 
 img {
@@ -18,17 +19,44 @@ img {
 }
 
 nav.navbar-expand-lg {
-    background-color: #acacac !important;
+    background-color: #888888 !important;
 }
 
-nav.navbar-light {
-    outline: none !important;
-    color: black !important;
-    background-color: transparent;
+a.navbar-brand {
+    padding: 10px 10px;
 }
 
 button {
     outline: none !important;
     border-color: transparent !important;
     box-shadow: none !important;
+}
+
+ion-icon {
+    display: inline-block;
+    padding: 0px 5px;
+    font-size: 28px;
+}
+
+span.badge {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    background-color: rgb(189, 0, 0);
+    padding: 5px 8px;
+    position: relative;
+    bottom: 6.5px;
+    right: 0px;
+}
+
+#home {
+    position: relative;
+    top: 2px;
+}
+#card {
+    position: relative;
+    top: 4px;
+}
+#cart {
+    position: relative;
+    top: 3.5px;
 }
