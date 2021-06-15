@@ -7,12 +7,14 @@ import { HeaderComponent } from './_components/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { FooterComponent } from './_components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ShopComponent } from './_components/shop/shop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
