@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product';
 import { ShopService } from 'src/app/_services/shop.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-shop',
@@ -38,18 +39,20 @@ export class ShopComponent implements OnInit {
   }
 
   onAdd(id) {
-    this.getProductById(id);
     this.getCartById(id);
-    if (!this.cart) {
-      let obj = this.product;
-      this.shopService.addToCart(obj).subscribe(() => {
-        this.shopService.getAllCart();
-      });
-    } else {
-      this.cart.quantity++;
-      this.shopService.updateCart(this.cart).subscribe(() => {
-        this.shopService.getAllCart();
-      });
-    }
+    this.shopService.getProductById(id).subscribe(data => {
+      console.log(data);
+      if (!this.cart) {
+        this.shopService.addToCart(data).subscribe(() => {
+          this.shopService.getAllCart();
+        })
+      } else {
+        this.cart.quantity++;
+        this.shopService.updateCart(this.cart).subscribe(() => {
+          this.shopService.getAllCart();
+        });
+      }
+    });
+    setTimeout(() => this.shopService.getCartNum(), 150);
   }
 }

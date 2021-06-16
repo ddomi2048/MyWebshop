@@ -22,7 +22,7 @@ import { ShopComponent } from './_components/shop/shop.component';
     HttpClientModule,
     IonicModule.forRoot()
   ],
-  providers: [],
+  providers: [HeaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

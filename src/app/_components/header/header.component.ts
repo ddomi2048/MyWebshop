@@ -9,21 +9,13 @@ import { ShopService } from 'src/app/_services/shop.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private shopService: ShopService) { }
+  constructor(public shopService: ShopService) { }
 
   cart: Product[];
-  qty: number = 0;
-
+  
   ngOnInit(): void {
-    this.getCartNum();
+    this.shopService.getCartNum();
   }
 
-  getCartNum() {
-    this.shopService.getAllCart().subscribe(data => {
-      this.cart = data;
-      this.cart.forEach(item => {
-        this.qty += item.quantity;
-      });
-    });
-  }
+  
 }
