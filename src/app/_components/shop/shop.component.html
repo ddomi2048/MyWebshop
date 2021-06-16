@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ product.make }}</h5>
                     <h5 class="card-title">{{ product.model }}</h5>
-                    <p class="card-text">{{ product.price }}</p>
+                    <p class="card-text">${{ product.price }}</p>
                     <a (click)="onAdd(product.id)" class="btn btn-primary">Add to cart</a>
                 </div>
             </div>
