@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Product } from '../product';
 import { catchError, tap } from 'rxjs/operators';
-import { delay, materialize, dematerialize } from 'rxjs/operators';
+
 
 const httpOption = {
   headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -38,7 +38,7 @@ export class ShopService {
   }
 
   getAllCart() {
-    return this.http.get<Product[]>(`${environment.apiUrl}/cart`, httpOption).pipe(materialize(), delay(500), dematerialize());
+    return this.http.get<Product[]>(`${environment.apiUrl}/cart`, httpOption);
   }
 
   getCartById(id) {

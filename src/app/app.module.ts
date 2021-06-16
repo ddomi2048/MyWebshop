@@ -8,13 +8,17 @@ import { IonicModule } from '@ionic/angular';
 import { FooterComponent } from './_components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './_components/shop/shop.component';
+import { HomeComponent } from './_components/home/home.component';
+import { CartComponent } from './_components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ShopComponent
+    ShopComponent,
+    HomeComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

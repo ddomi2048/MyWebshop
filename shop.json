@@ -13,33 +13,49 @@
       "make": "Ferrari",
       "model": "Testarossa",
       "price": 200,
-      "quantity": 2,
-      "imageUrl": ""
+      "quantity": 1,
+      "imageUrl": "./assets/img/512tr.jpg"
     },
     {
       "id": 3,
       "make": "Lamborghini",
       "model": "Countach",
       "price": 300,
-      "quantity": 3,
-      "imageUrl": ""
+      "quantity": 1,
+      "imageUrl": "./assets/img/lambo.jpg"
     },
     {
       "id": 4,
       "make": "DeLorean",
       "model": "DMC-12",
       "price": 400,
-      "quantity": 4,
-      "imageUrl": ""
+      "quantity": 1,
+      "imageUrl": "./assets/img/delorean.jpg"
     }
   ],
   "cart": [
+    {
+      "id": 2,
+      "make": "Ferrari",
+      "model": "Testarossa",
+      "price": 200,
+      "quantity": 20,
+      "imageUrl": "./assets/img/512tr.jpg"
+    },
+    {
+      "id": 3,
+      "make": "Lamborghini",
+      "model": "Countach",
+      "price": 300,
+      "quantity": 8,
+      "imageUrl": "./assets/img/delorean.jpg"
+    },
     {
       "id": 1,
       "make": "Porsche",
       "model": "930 Turbo",
       "price": 100,
-      "quantity": 27,
+      "quantity": 14,
       "imageUrl": "./assets/img/930.jpg"
     }
   ]

@@ -27,7 +27,7 @@ export class ShopComponent implements OnInit {
   }
 
   getProductById(id) {
-    this.shopService.getProductById(id).subscribe(data => { this.product = data; console.log(this.product) });
+    this.shopService.getProductById(id).subscribe(data => this.product = data);
   }
 
   getAllCart() {
@@ -35,13 +35,12 @@ export class ShopComponent implements OnInit {
   }
 
   getCartById(id) {
-    this.shopService.getCartById(id).subscribe(data => { this.cart = data; console.log(this.cart) });
+    this.shopService.getCartById(id).subscribe(data => this.cart = data);
   }
 
   onAdd(id) {
     this.getCartById(id);
     this.shopService.getProductById(id).subscribe(data => {
-      console.log(data);
       if (!this.cart) {
         this.shopService.addToCart(data).subscribe(() => {
           this.shopService.getAllCart();
@@ -53,6 +52,6 @@ export class ShopComponent implements OnInit {
         });
       }
     });
-    setTimeout(() => this.shopService.getCartNum(), 150);
+    setTimeout(() => this.shopService.getCartNum(), 200);
   }
 }
