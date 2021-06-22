@@ -39,24 +39,24 @@
       "make": "Ferrari",
       "model": "Testarossa",
       "price": 200,
-      "quantity": 20,
+      "quantity": 2,
       "imageUrl": "./assets/img/512tr.jpg"
-    },
-    {
-      "id": 3,
-      "make": "Lamborghini",
-      "model": "Countach",
-      "price": 300,
-      "quantity": 8,
-      "imageUrl": "./assets/img/delorean.jpg"
     },
     {
       "id": 1,
       "make": "Porsche",
       "model": "930 Turbo",
       "price": 100,
-      "quantity": 14,
+      "quantity": 3,
       "imageUrl": "./assets/img/930.jpg"
+    },
+    {
+      "id": 3,
+      "make": "Lamborghini",
+      "model": "Countach",
+      "price": 300,
+      "quantity": 2,
+      "imageUrl": "./assets/img/lambo.jpg"
     }
   ]
 }

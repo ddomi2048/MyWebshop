@@ -6,7 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 
 
 const httpOption = {
-  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 }
 
 @Injectable({
@@ -18,6 +18,7 @@ export class ShopService {
 
   qty: number = 0;
   cart: Product[];
+  temp: boolean;
 
   getCartNum() {
     this.qty = 0;
@@ -26,7 +27,17 @@ export class ShopService {
       this.cart.forEach(item => {
         this.qty += item.quantity;
       });
-    })
+    });
+  }
+
+  helper() {
+    setTimeout(() => {
+      if (this.qty) {
+        this.temp = true;
+      } else {
+        this.temp = false;
+      }
+    }, 300);
   }
 
   getAllProducts() {
@@ -55,6 +66,13 @@ export class ShopService {
   updateCart(product: Product) {
     return this.http.put(`${environment.apiUrl}/cart/${product.id}`, product, httpOption).pipe(
       tap(updateCart => console.log(`Updated cart = ${JSON.stringify(updateCart)}`)),
+      catchError(error => error)
+    );
+  }
+
+  deleteCart(id) {
+    return this.http.delete<Product>(`${environment.apiUrl}/cart/${id}`, httpOption).pipe(
+      tap(() => console.log(`Removed from cart = ${id}`)),
       catchError(error => error)
     );
   }

@@ -1,0 +1,11 @@
+button {
+    padding: 2px 9px !important;
+}
+
+button:focus {
+    box-shadow: none;
+}
+
+#delete {
+    width: 5% !important;
+}
