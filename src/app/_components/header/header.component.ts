@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   cart: Product[];
   
   ngOnInit(): void {
-    this.shopService.getCartNum();
+    setTimeout(() => this.shopService.getCartNum(), 300);
   }
 
 }

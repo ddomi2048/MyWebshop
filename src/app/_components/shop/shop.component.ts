@@ -43,15 +43,15 @@ export class ShopComponent implements OnInit {
     this.shopService.getProductById(id).subscribe(data => {
       if (!this.cart) {
         this.shopService.addToCart(data).subscribe(() => {
-          this.shopService.getAllCart();
+          setTimeout(() => this.shopService.getAllCart(), 200);
         })
       } else {
         this.cart.quantity++;
         this.shopService.updateCart(this.cart).subscribe(() => {
-          this.shopService.getAllCart();
+          setTimeout(() => this.shopService.getAllCart(), 200);
         });
       }
     });
-    setTimeout(() => this.shopService.getCartNum(), 200);
+    setTimeout(() => this.shopService.getCartNum(), 400);
   }
 }

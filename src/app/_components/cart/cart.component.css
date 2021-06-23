@@ -1,11 +1,27 @@
 button {
-    padding: 2px 9px !important;
+    padding: 0px 8px !important;
+    line-height: 1.5 !important;
 }
 
 button:focus {
     box-shadow: none;
 }
 
-#delete {
+.container {
+    min-height: 69.1vh;
+}
+
+#delete,
+#id {
     width: 5% !important;
+}
+
+#make,
+#model {
+    width: 25% !important;
+}
+
+#quantity,
+#price {
+    width: 20% !important;
 }

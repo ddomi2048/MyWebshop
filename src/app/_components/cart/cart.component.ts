@@ -16,9 +16,10 @@ export class CartComponent implements OnInit {
   total: number;
 
   ngOnInit(): void {
+    this.shopService.getAllCart();
     this.getAllCart();
     this.totalSum();
-    this.shopService.helper();
+    setTimeout(() => this.shopService.helper(), 200);
   }
 
   getAllCart() {
@@ -44,9 +45,9 @@ export class CartComponent implements OnInit {
       data.quantity++;
       this.shopService.updateCart(data).subscribe(() => {
         this.shopService.getCartNum();
-        this.totalSum();
+        setTimeout(() => this.totalSum(), 200);
         setTimeout(() => this.shopService.getAllCart(), 200);
-        this.getAllCart();
+        setTimeout(() => this.getAllCart(), 200);
       });
     });
   }
@@ -57,9 +58,9 @@ export class CartComponent implements OnInit {
         data.quantity--;
         this.shopService.updateCart(data).subscribe(() => {
           this.shopService.getCartNum();
-          this.totalSum();
+          setTimeout(() => this.totalSum(), 200);
           setTimeout(() => this.shopService.getAllCart(), 200);
-          this.getAllCart();
+          setTimeout(() => this.getAllCart(), 200);
         });
       } else {
         this.delete(id);
@@ -71,9 +72,9 @@ export class CartComponent implements OnInit {
     confirm("Are you sure you want to delete this hero?") ?
       this.shopService.deleteCart(id).subscribe(() => {
         this.shopService.getCartNum();
-        this.totalSum();
+        setTimeout(() => this.totalSum(), 200);
         setTimeout(() => this.shopService.getAllCart(), 200);
-        this.getAllCart();
+        setTimeout(() => this.getAllCart(), 200);
       })
       : '';
       this.shopService.helper();

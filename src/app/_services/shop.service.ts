@@ -19,6 +19,7 @@ export class ShopService {
   qty: number = 0;
   cart: Product[];
   temp: boolean;
+  temp2: number;
 
   getCartNum() {
     this.qty = 0;

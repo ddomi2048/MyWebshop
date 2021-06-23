@@ -1,12 +1,12 @@
-<div class="container">
-    <table *ngIf="this.shopService.temp" class="table table-hover align-middle">
+<div *ngIf="this.shopService.temp" class="container">
+    <table class="table table-hover align-middle">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Make</th>
-                <th scope="col">Model</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
+                <th id="id" scope="col">#</th>
+                <th id="make" scope="col">Make</th>
+                <th id="model" scope="col">Model</th>
+                <th id="quantity" scope="col">Quantity</th>
+                <th id="price" scope="col">Price</th>
                 <th id="delete"></th>
             </tr>
         </thead>
@@ -27,4 +27,7 @@
             </tr>
         </tfoot>
     </table>
+</div>
+<div *ngIf="!this.shopService.temp" class="container">
+    <h1>Oops! Looks like your cart is empty.</h1>
 </div>
