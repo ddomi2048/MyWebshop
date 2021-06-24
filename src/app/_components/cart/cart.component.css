@@ -1,14 +1,36 @@
-button {
+table button {
     padding: 0px 8px !important;
     line-height: 1.5 !important;
 }
 
-button:focus {
+table button:focus {
     box-shadow: none;
 }
 
+h1 {
+    font-size: 50px;
+    padding-top: 50px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+hr {
+    width: 20%;
+    margin: auto;
+    margin-bottom: 50px;
+    padding-bottom: 5px;
+}
+
+
+p {
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+
 .container {
-    min-height: 69.1vh;
+    min-height: 68vh;
 }
 
 #delete,

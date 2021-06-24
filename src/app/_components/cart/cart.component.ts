@@ -69,7 +69,7 @@ export class CartComponent implements OnInit {
   }
 
   delete(id) {
-    confirm("Are you sure you want to delete this hero?") ?
+    confirm("Are you sure you want to delete this item?") ?
       this.shopService.deleteCart(id).subscribe(() => {
         this.shopService.getCartNum();
         setTimeout(() => this.totalSum(), 200);

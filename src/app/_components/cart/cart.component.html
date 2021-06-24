@@ -1,4 +1,6 @@
 <div *ngIf="this.shopService.temp" class="container">
+    <h2 class="text-center">Cart</h2>
+    <hr>
     <table class="table table-hover align-middle">
         <thead>
             <tr>
@@ -27,7 +29,11 @@
             </tr>
         </tfoot>
     </table>
+    <button routerLink="/shop" type="button" class="btn btn-primary">Back to shopping</button>
+    <button routerLink="" type="button" class="btn btn-success mx-3">Checkout</button>
 </div>
-<div *ngIf="!this.shopService.temp" class="container">
-    <h1>Oops! Looks like your cart is empty.</h1>
+<div *ngIf="!this.shopService.temp" class="container text-center">
+    <h1>Your cart is empty.</h1>
+    <p>You can browse our shop by clicking the button down below.</p>
+    <button routerLink="/shop" type="button" class="btn btn-primary">Back to shopping</button>
 </div>

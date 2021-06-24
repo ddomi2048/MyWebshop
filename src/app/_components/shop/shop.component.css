@@ -1,0 +1,10 @@
+h2 {
+    font-size: 50px;
+}
+
+hr {
+    width: 20%;
+    margin: auto;
+    margin-bottom: 50px;
+    padding-bottom: 5px;
+}
