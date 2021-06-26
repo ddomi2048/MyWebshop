@@ -47,3 +47,8 @@ p {
 #price {
     width: 20% !important;
 }
+
+#trash {
+    position: relative;
+    top: 2px;
+}

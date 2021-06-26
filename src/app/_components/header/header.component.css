@@ -19,7 +19,7 @@ img {
 }
 
 nav.navbar-expand-lg {
-    background-color: #888888 !important;
+    background-color: #acacac !important;
 }
 
 a.navbar-brand {
@@ -41,7 +41,7 @@ ion-icon {
 span.badge {
     color: rgb(255, 255, 255);
     font-size: 18px;
-    background-color: rgb(189, 0, 0);
+    background-color: #bd0000;
     padding: 5px 8px;
     position: relative;
     bottom: 6.5px;

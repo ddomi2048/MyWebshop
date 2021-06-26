@@ -19,7 +19,7 @@
                 <td>{{ cart.model }}</td>
                 <td><button (click)="decrease(cart.id)" type="button" class="btn btn-danger">-</button> {{ cart.quantity }} <button (click)="increase(cart.id)" type="button" class="btn btn-primary">+</button></td>
                 <td>${{ cart.price * cart.quantity }}</td>
-                <td><button (click)="delete(cart.id)" type="button" class="btn btn-danger"><ion-icon name="trash"></ion-icon></button></td>
+                <td><button (click)="delete(cart.id)" type="button" class="btn btn-danger"><ion-icon id="trash" name="trash"></ion-icon></button></td>
             </tr>
         </tbody>
         <tfoot>
