@@ -41,13 +41,6 @@
       "password": "12345",
       "email": "test@gmail.com",
       "token": "jwt-token"
-    },
-    {
-      "id": 2,
-      "username": "ddomi2048",
-      "password": "Password1",
-      "email": "ddomi2048@gmail.com",
-      "token": ""
     }
   ]
 }
