@@ -30,7 +30,7 @@
         </tfoot>
     </table>
     <button routerLink="/shop" type="button" class="btn btn-primary">Back to shopping</button>
-    <button routerLink="" type="button" class="btn btn-success mx-3">Checkout</button>
+    <button type="button" (click)="checkout()" class="btn btn-success mx-3">Checkout</button>
 </div>
 <div *ngIf="!this.shopService.temp" class="container text-center">
     <h1>Your cart is empty.</h1>

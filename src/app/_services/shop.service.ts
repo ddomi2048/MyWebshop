@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Product } from '../product';
 import { catchError, tap } from 'rxjs/operators';
+import { User } from '../user';
 
 
 const httpOption = {
@@ -57,6 +58,14 @@ export class ShopService {
     return this.http.get<Product>(`${environment.apiUrl}/cart/${id}`, httpOption);
   }
 
+  getAllUsers() {
+    return this.http.get<User[]>(`${environment.apiUrl}/users`, httpOption);
+  }
+
+  getUserById(id) {
+    return this.http.get<User>(`${environment.apiUrl}/users/${id}`, httpOption);
+  }
+
   addToCart(product: Product) {
     return this.http.post<Product>(`${environment.apiUrl}/cart`, product, httpOption).pipe(
       tap((product: Product) => console.log(`Added to cart = ${JSON.stringify(product)}`)),
@@ -74,6 +83,27 @@ export class ShopService {
   deleteCart(id) {
     return this.http.delete<Product>(`${environment.apiUrl}/cart/${id}`, httpOption).pipe(
       tap(() => console.log(`Removed from cart = ${id}`)),
+      catchError(error => error)
+    );
+  }
+
+  deleteUser(id) {
+    return this.http.delete<User>(`${environment.apiUrl}/users/${id}`, httpOption).pipe(
+      tap(() => console.log(`Removed from users = ${id}`)),
+      catchError(error => error)
+    );
+  }
+
+  updateUser(user: User) {
+    return this.http.put<User>(`${environment.apiUrl}/users/${user.id}`, user, httpOption).pipe(
+      tap(() => console.log(`Changed password for = ${user.id}`)),
+      catchError(error => error)
+    );
+  }
+
+  addUser(user: User) {
+    return this.http.post<User>(`${environment.apiUrl}/users`, user, httpOption).pipe(
+      tap((user: User) => console.log(`Added user = ${JSON.stringify(user)}`)),
       catchError(error => error)
     );
   }

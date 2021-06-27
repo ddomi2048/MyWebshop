@@ -1,0 +1,41 @@
+<div class="container h-100">
+    <div class="card w-50">
+        <div class="card-header">
+          Register
+        </div>
+
+        <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <div class="form-group p-3">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username"
+                    required
+                    [(ngModel)]="this.username" name="username"
+                    #name="ngModel">
+            </div>
+            <div class="form-group p-3">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" id="email"
+                    required
+                    [(ngModel)]="this.email" name="email"
+                    #name="ngModel">
+            </div>
+            <div class="form-group p-3">
+                <label for="pw">Password:</label>
+                <input type="password" class="form-control" id="pw"
+                    required
+                    [(ngModel)]="this.password" name="pw"
+                    #name="ngModel">
+            </div>
+            <div class="form-group p-3">
+                <label for="pw2">Password again:</label>
+                <input type="password" class="form-control" id="pw2"
+                    required
+                    [(ngModel)]="this.password2" name="pw2"
+                    #name="ngModel">
+            </div>
+
+            <button [disabled]="!registerForm.form.valid" type="submit" class="btn btn-primary my-3 mx-3">Register</button>
+            <button routerLink='/login' type="button" class="btn btn-primary my-3 mx-3">Already have an account</button>
+        </form>
+      </div>
+</div>

@@ -60,3 +60,8 @@ span.badge {
     position: relative;
     top: 3.5px;
 }
+#acc,
+#login {
+    position: relative;
+    top: 4.5px;
+}

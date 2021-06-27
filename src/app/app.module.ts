@@ -10,6 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './_components/shop/shop.component';
 import { HomeComponent } from './_components/home/home.component';
 import { CartComponent } from './_components/cart/cart.component';
+import { LoginComponent } from './_components/login/login.component';
+import { RegisterComponent } from './_components/register/register.component';
+import { AccountComponent } from './_components/account/account.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { CheckoutComponent } from './_components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +24,18 @@ import { CartComponent } from './_components/cart/cart.component';
     FooterComponent,
     ShopComponent,
     HomeComponent,
-    CartComponent
+    CartComponent,
+    LoginComponent,
+    RegisterComponent,
+    AccountComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    CommonModule,
     IonicModule.forRoot()
   ],
   providers: [HeaderComponent],

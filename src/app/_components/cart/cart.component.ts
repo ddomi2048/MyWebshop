@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/product';
+import { User } from 'src/app/user';
+import { AuthService } from 'src/app/_services/auth.service';
 import { ShopService } from 'src/app/_services/shop.service';
 
 @Component({
@@ -9,21 +12,27 @@ import { ShopService } from 'src/app/_services/shop.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public shopService: ShopService) { }
+  constructor(public shopService: ShopService, private authService: AuthService, private router: Router) { }
 
   carts: Product[];
   cart: Product;
   total: number;
+  user: User;
 
   ngOnInit(): void {
     this.shopService.getAllCart();
     this.getAllCart();
     this.totalSum();
     setTimeout(() => this.shopService.helper(), 200);
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
 
   getAllCart() {
-    this.shopService.getAllCart().subscribe(data => this.carts = data);
+    this.shopService.getAllCart().subscribe(data => {
+      setTimeout(() => {
+        this.carts = data;
+      }, 60);
+    });
   }
 
   getCartById(id) {
@@ -73,10 +82,35 @@ export class CartComponent implements OnInit {
       this.shopService.deleteCart(id).subscribe(() => {
         this.shopService.getCartNum();
         setTimeout(() => this.totalSum(), 200);
-        setTimeout(() => this.shopService.getAllCart(), 200);
-        setTimeout(() => this.getAllCart(), 200);
+        setTimeout(() => this.shopService.getAllCart(), 250);
+        setTimeout(() => this.getAllCart(), 300);
       })
       : '';
-      this.shopService.helper();
+    this.shopService.helper();
+  }
+
+  maxId() {
+    return (Math.max.apply(Math, this.carts.map(function (x) {
+      return x.id;
+    })));
+  }
+
+  checkout() {
+    if (this.authService.isLoggedIn()) {
+      if (confirm('$' + this.total + ' will be withdrawn from your account, do you want to continue?')) {
+        this.router.navigate(['/checkout']);
+        for (let i = 1; i <= this.maxId(); i++) {
+          this.shopService.deleteCart(i).subscribe(() => {
+            this.shopService.getCartNum();
+            this.shopService.getAllCart();
+          });
+        }
+      } else {
+
+      }
+    } else {
+      alert('You need to log in if you want to checkout!');
+      this.router.navigate(['/login']);
+    }
   }
 }

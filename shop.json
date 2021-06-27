@@ -33,38 +33,21 @@
       "imageUrl": "./assets/img/delorean.jpg"
     }
   ],
-  "cart": [
+  "cart": [],
+  "users": [
     {
       "id": 1,
-      "make": "Porsche",
-      "model": "930 Turbo",
-      "price": 198000,
-      "quantity": 1,
-      "imageUrl": "./assets/img/930.jpg"
+      "username": "ddomi",
+      "password": "12345",
+      "email": "test@gmail.com",
+      "token": "jwt-token"
     },
     {
       "id": 2,
-      "make": "Ferrari",
-      "model": "Testarossa",
-      "price": 140000,
-      "quantity": 1,
-      "imageUrl": "./assets/img/512tr.jpg"
-    },
-    {
-      "id": 3,
-      "make": "Lamborghini",
-      "model": "Countach",
-      "price": 550000,
-      "quantity": 1,
-      "imageUrl": "./assets/img/lambo.jpg"
-    },
-    {
-      "id": 4,
-      "make": "DeLorean",
-      "model": "DMC-12",
-      "price": 50000,
-      "quantity": 1,
-      "imageUrl": "./assets/img/delorean.jpg"
+      "username": "ddomi2048",
+      "password": "Password1",
+      "email": "ddomi2048@gmail.com",
+      "token": ""
     }
   ]
 }

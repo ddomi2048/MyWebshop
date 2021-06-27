@@ -5,6 +5,7 @@ table button {
 
 table button:focus {
     box-shadow: none;
+    outline: none;
 }
 
 h1 {

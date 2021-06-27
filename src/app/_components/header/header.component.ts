@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product';
+import { User } from 'src/app/user';
+import { AuthService } from 'src/app/_services/auth.service';
 import { ShopService } from 'src/app/_services/shop.service';
 
 @Component({
@@ -9,12 +11,14 @@ import { ShopService } from 'src/app/_services/shop.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public shopService: ShopService) { }
+  constructor(public shopService: ShopService, public authService: AuthService) { }
 
   cart: Product[];
+  user: User;
+  username: string;
   
   ngOnInit(): void {
     setTimeout(() => this.shopService.getCartNum(), 300);
+    setTimeout(() => this.authService.getUsername(), 100);
   }
-
 }
