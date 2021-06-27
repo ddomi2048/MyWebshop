@@ -34,13 +34,5 @@
     }
   ],
   "cart": [],
-  "users": [
-    {
-      "id": 1,
-      "username": "ddomi",
-      "password": "12345",
-      "email": "test@gmail.com",
-      "token": "jwt-token"
-    }
-  ]
+  "users": []
 }

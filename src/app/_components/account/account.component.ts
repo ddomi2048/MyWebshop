@@ -35,13 +35,15 @@ export class AccountComponent implements OnInit {
   }
 
   delete() {
-    confirm('Are you sure you want to delete your user? You will be logged out.')?
-    this.shopService.deleteUser(this.user.id).subscribe(() => {
-      this.shopService.getAllUsers();
-      localStorage.removeItem('user');
-      this.router.navigate(['/home']);
-    })
-    : "";
+    confirm('Are you sure you want to delete your user? You will be logged out.') ?
+      this.shopService.deleteUser(this.user.id).subscribe(() => {
+        setTimeout(() => {
+          this.shopService.getAllUsers();
+          localStorage.removeItem('user');
+          this.router.navigate(['/home']);
+        }, 100);
+      })
+      : "";
   }
 
   logout() {
