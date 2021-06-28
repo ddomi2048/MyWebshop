@@ -34,5 +34,13 @@
     }
   ],
   "cart": [],
-  "users": []
+  "users": [
+    {
+      "id": 1,
+      "username": "ddomi",
+      "password": "12345",
+      "email": "ddomi2048@gmail.com",
+      "token": ""
+    }
+  ]
 }
