@@ -1,3 +1,6 @@
+To run this app you have to install json-server: npm i json-server
+Then run the command: json-server --watch shop.json
+
 # WebshopApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
