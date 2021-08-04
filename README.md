@@ -1,5 +1,5 @@
-To run this app you have to install json-server: npm i json-server
-Then run the command: json-server --watch shop.json
+To run this app you have to install json-server: npm i json-server,
+hen run the command: json-server --watch shop.json
 
 # WebshopApp
 
